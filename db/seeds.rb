@@ -21,7 +21,7 @@ class Seed
         country: Faker::WorldCup.team,
         city: Faker::Nation.capital_city
       )
-      puts "Review #{i}: Reviewer is #{review.user_name} and review is '#{review.content}'."
+      puts "Review #{i}: Reviewer is #{review.user_name} gave a rating of #{review.rating} and review is '#{review.content}'."
     end
   end
 end
