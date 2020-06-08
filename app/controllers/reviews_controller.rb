@@ -11,11 +11,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.create!(review_params)
-    if json_response(@review, :created)
-      render status: 200, json: {
+    if Review.create!(review_params)
+      render status: 201, json: {
         message: "your review was saved succesfully"
       }
+    end
   end
 
   def update
