@@ -5,6 +5,15 @@ class ReviewsController < ApplicationController
       @reviews = Review.country_reviews(params[:country])
       # binding.pry
       json_response(@reviews)
+    elsif params[:city]
+      @reviews = Review.city(params[:city])
+      json_response(@reviews)
+    elsif params[:rating]
+      @reviews = Review.rating(params[:rating])
+      json_response(@reviews)
+    elsif params[:user_name]
+      @reviews = Review.user_name(params[:user_name])
+      json_response(@reviews)
     else
       @reviews = Review.all
       json_response(@reviews)
