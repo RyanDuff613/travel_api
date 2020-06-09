@@ -26,7 +26,8 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
 gem 'pry'
-
+gem 'kaminari'
+gem 'rack-throttle', '~> 0.7.0'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 

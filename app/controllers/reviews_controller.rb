@@ -16,7 +16,9 @@ class ReviewsController < ApplicationController
       json_response(@reviews)
     else
       @reviews = Review.all
-      json_response(@reviews)
+      # json_response(@reviews)
+      # @reviews_to_display = @reviews.page(params[:page]).per(5)
+      render :index
     end
   end
 

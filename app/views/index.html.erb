@@ -1,0 +1,12 @@
+<div>
+  <%= paginate(@reviews_to_display) %>
+  <ul>
+    <% @reviews_to_display.each do |p| %>
+    <li>
+      <p><%= p.user_name %></p>
+      <p>Why won't this fucker work?</p>
+    </li>
+    <% end %>
+  </ul>
+  <%= paginate(@reviews_to_display)%>
+</div>
