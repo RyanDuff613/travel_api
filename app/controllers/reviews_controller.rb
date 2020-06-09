@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+swagger_controller :reviews, "Reviews Controller"
   def index
     if params[:country]
       @reviews = Review.country_reviews(params[:country])
@@ -62,5 +62,12 @@ class ReviewsController < ApplicationController
   def review_params
     params.permit(:user_name, :content, :rating, :country, :city, :id)
   end
+
+  swagger_api :index do
+    summary "Gets all reviews in database"
+    notes "Lists all current reviews"
+    param :integer, :optional, "Review ID"
+  end
+
 
 end

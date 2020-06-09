@@ -28,6 +28,7 @@ gem 'faker'
 gem 'pry'
 gem 'kaminari'
 gem 'rack-throttle', '~> 0.7.0'
+gem 'swagger-docs'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
