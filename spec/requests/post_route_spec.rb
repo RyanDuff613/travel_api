@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'pry'
 
 describe 'post a review route', :type => :request do
-  # let!(:review) {FactoryBot.create(:review)}
   before do
     post '/reviews', params: {:user_name => 'guy', :rating => 4, :content => 'stuff', :country => 'spain', :city => 'madrid'}
   end
