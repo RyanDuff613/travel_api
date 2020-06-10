@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
-swagger_controller :reviews, "Reviews Controller"
-  def index
+ 
+
+def index
     if params[:country]
       @reviews = Review.country_reviews(params[:country])
       # binding.pry
@@ -16,9 +17,9 @@ swagger_controller :reviews, "Reviews Controller"
       json_response(@reviews)
     else
       @reviews = Review.all
-      # json_response(@reviews)
+      json_response(@reviews)
       # @reviews_to_display = @reviews.page(params[:page]).per(5)
-      render :index
+      # render :index
     end
   end
 
@@ -63,11 +64,15 @@ swagger_controller :reviews, "Reviews Controller"
     params.permit(:user_name, :content, :rating, :country, :city, :id)
   end
 
-  swagger_api :index do
-    summary "Gets all reviews in database"
-    notes "Lists all current reviews"
-    param :integer, :optional, "Review ID"
-  end
+  # swagger_controller :reviews, "Reviews Controller"
+
+  # swagger_api :index do
+  #   summary "Gets all reviews in database"
+  #   notes "Lists all current reviews"
+  #   param :integer, :optional, "Review ID"
+  #   response :unprocessable_entity, "Couldn't add review"
+  #   response :not_found, "Not Found"
+  # end
 
 
 end
